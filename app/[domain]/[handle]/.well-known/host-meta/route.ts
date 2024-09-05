@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { NextRequest } from 'next/server';
 
 export const GET = async (request: NextRequest) => {
-    return new Response(JSON.stringify(request), { status: 200 });
+    return new Response(JSON.stringify(request.nextUrl.searchParams.toString()), { status: 200 });
 
     /*if (typeof searchParams == "string" ) {
         redirect("https://fed.brid.gy/.well-known/host-meta/?"+searchParams);
